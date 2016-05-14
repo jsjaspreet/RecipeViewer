@@ -1,0 +1,42 @@
+.source-display-container {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 1rem;
+    margin: 1rem 1rem 1rem 0;
+}
+
+#app-name {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+.source-data-display {
+    padding: 1rem;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.address {
+    font-family: 'Lora', serif;
+    color: #2b2d2f;
+    font-size: 1.3rem;
+}
+
+.business-name {
+    color: darkgreen;
+    text-decoration: underline;
+}
+
+.source-code-id {
+    color: black;
+}
+
+.source-code {
+    color: darkcyan;
+    font-weight: bolder;
+}
+
+.source-record-id {
+    color: orangered;
+    font-style: italic;
+}

@@ -1,15 +1,18 @@
-import axios from 'axios';
+import recipes from '../../recipes';
+import { FETCH_RECIPES } from './types';
+import { APPLY_FILTER } from './types';
 
-const ROOT_URL= `http://argoservice.prod-wc1.ypec.yp.com/ArgoService/scan?mode=full&app=argo`;
 
-export const FETCH_SCAN_DATA = 'FETCH_SCAN_DATA';
-
-export function fetchScanData(ypid) {
-    const url = `${ROOT_URL}&ypid=${ypid}`;
-    console.log(url);
-    const request = axios.get(url);
+export function fetchRecipes() {
     return {
-        type: FETCH_SCAN_DATA,
-        payload: request
-    };
+        type: FETCH_RECIPES,
+        payload: recipes
+    }
+}
+
+export function applyFilter(filter) {
+    return {
+        type: APPLY_FILTER,
+        payload: filter
+    }
 }

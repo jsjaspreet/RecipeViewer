@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import ScanDataReducer from './reducer_fetch_scan_data';
+import RecipeReducer from './reducer_fetch_recipes';
+import FilterReducer from './reducer_filter_recipes';
 
 const rootReducer = combineReducers({
-    scanData: ScanDataReducer
+    recipes: RecipeReducer,
+    filter: FilterReducer
 });
 
 export default rootReducer;

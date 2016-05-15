@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { fetchScanData } from '../actions/index';
+import * as actions from '../actions/index';
 
 class SearchBar extends Component {
 
@@ -18,7 +17,7 @@ class SearchBar extends Component {
 
     onFormSubmit(event) {
         event.preventDefault();
-        this.props.fetchScanData(this.state.term);
+        this.props.applyFilter(this.state.term);
         this.setState({term:''});
     }
 
@@ -26,13 +25,13 @@ class SearchBar extends Component {
         return (
             <form onSubmit={this.onFormSubmit} className="input-group">
                 <input
-                    placeholder="Enter a YPID"
+                    placeholder="Filter by Ingredient"
                     className="form-control"
                     value={this.state.term}
                     onChange={this.onInputChange}
                 />
                 <span className="input-group-btn">
-                    <button type="submit" className="btn btn-secondary">Submit</button>
+                    <button type="submit" className="btn btn-secondary">Filter</button>
                 </span>
             </form>
         );
@@ -40,9 +39,4 @@ class SearchBar extends Component {
 }
 
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators( { fetchScanData }, dispatch);
-}
-
-
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(null, actions)(SearchBar);

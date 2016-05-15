@@ -1,2 +1,4 @@
 export const FETCH_RECIPES = 'FETCH_RECIPES';
 export const APPLY_FILTER = 'APPLY_FILTER';
+export const SELECT_RECIPE = 'SELECT_RECIPE';
+export const UNSELECT_RECIPE = 'UNSELECT_RECIPE';

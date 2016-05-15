@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SearchBar from '../containers/search_bar';
 import { connect } from 'react-redux';
 import RecipesView from './recipes_view';
+import IngredientsView from './ingredients_view';
 import * as actions from '../actions';
 
 class App extends Component {
@@ -19,8 +20,8 @@ class App extends Component {
             <div id="app">
                 <h1 id="app-title">Recipe Viewer</h1>
                 <div id="app-container">
-                <span>
-                    { /* Ingredient View*/} 
+                <span className="ingredients-view">
+                    <IngredientsView />
                 </span>
                 <span className="recipe-container">
                     <SearchBar />

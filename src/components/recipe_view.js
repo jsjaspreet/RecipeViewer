@@ -1,18 +1,38 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import * as actions from '../actions/index';
 
-export default class RecipeView extends Component {
+class RecipeView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isChecked:false,
+            isChecked: false,
             recipe: props.recipe
         };
         this.onChange = this.onChange.bind(this);
     }
 
-    onChange() {
-        this.setState({isChecked: !this.state.isChecked});
+
+    componentWillReceiveProps(props) {
+        let selected = false;
+        props.selected_recipes.forEach((recipe) => {
+            if(recipe.name == this.state.recipe.name) {
+                selected=true;
+            }
+        });
+        this.setState({isChecked: selected});
     }
+
+
+    onChange() {
+        let isChecked = !this.state.isChecked;
+        if (isChecked)
+            this.props.selectRecipe(this.state.recipe);
+        else
+            this.props.unselectRecipe(this.state.recipe);
+        this.setState({isChecked});
+    }
+
     render() {
         return (
 
@@ -35,12 +55,17 @@ export default class RecipeView extends Component {
                 <div className="select-recipe"> Select
                     <input type="checkbox"
                            checked={this.state.isChecked}
-                           onClick={this.onChange}
+                           onChange={this.onChange}
                            className="recipe-checkbox"
                     />
                 </div>
             </div>
-        )
-            ;
+        );
     }
 }
+
+function mapStateToProps({selected_recipes}) {
+    return {selected_recipes};
+}
+
+export default connect(mapStateToProps, actions)(RecipeView);

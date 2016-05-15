@@ -1,6 +1,8 @@
 import recipes from '../../recipes';
 import { FETCH_RECIPES } from './types';
 import { APPLY_FILTER } from './types';
+import { SELECT_RECIPE } from './types';
+import { UNSELECT_RECIPE } from './types';
 
 
 export function fetchRecipes() {
@@ -14,5 +16,18 @@ export function applyFilter(filter) {
     return {
         type: APPLY_FILTER,
         payload: filter
+    }
+}
+
+export function selectRecipe(recipe) {
+    return {
+        type: SELECT_RECIPE,
+        payload: recipe
+    }
+}
+export function unselectRecipe(recipe) {
+    return {
+        type: UNSELECT_RECIPE,
+        payload: recipe
     }
 }

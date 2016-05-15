@@ -22,7 +22,7 @@ class App extends Component {
                 <span>
                     { /* Ingredient View*/} 
                 </span>
-                <span>
+                <span className="recipe-container">
                     <SearchBar />
                     <RecipesView 
                         recipes={this.props.recipes}

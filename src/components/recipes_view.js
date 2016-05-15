@@ -17,7 +17,7 @@ export default ({recipes, filter}) => {
     });
 
     return (
-        <div>
+        <div className="recipes-display">
             {
                 filteredRecipes.map(
                     (recipe) =>

@@ -23,6 +23,7 @@ class SearchBar extends Component {
 
     render() {
         return (
+            <div className="filter-bar">
             <form onSubmit={this.onFormSubmit} className="input-group">
                 <input
                     placeholder="Filter by Ingredient"
@@ -34,6 +35,7 @@ class SearchBar extends Component {
                     <button type="submit" className="btn btn-secondary">Filter</button>
                 </span>
             </form>
+                </div>
         );
     }
 }

@@ -1,4 +1,4 @@
-[
+export default [
     {
         "name": "Risotto",
         "type": "Italian",

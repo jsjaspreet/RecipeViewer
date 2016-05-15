@@ -1,4 +1,7 @@
 module.exports = {
+  loaders: [
+    { test: /\.json$/, loader: 'json'}
+  ],
   entry: [
     './src/index.js'
   ],

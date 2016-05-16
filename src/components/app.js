@@ -12,6 +12,7 @@ class App extends Component {
     
     componentWillMount() {
         this.props.fetchRecipes();
+        this.props.fetchSelections();
     }
     
 

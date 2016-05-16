@@ -8,6 +8,13 @@ class IngredientsView extends Component {
     }
 
     render() {
+        if(!this.props.selected_recipes) {
+            return (
+                <div>
+                    Please select a recipe.
+                </div>
+            )
+        }
         if (this.props.selected_recipes.isEmpty()) {
             return (
                 <div>

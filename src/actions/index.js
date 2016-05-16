@@ -3,6 +3,8 @@ import { FETCH_RECIPES } from './types';
 import { APPLY_FILTER } from './types';
 import { SELECT_RECIPE } from './types';
 import { UNSELECT_RECIPE } from './types';
+import { FETCH_SELECTIONS } from './types';
+import { Set } from 'immutable';
 
 
 export function fetchRecipes() {
@@ -29,5 +31,14 @@ export function unselectRecipe(recipe) {
     return {
         type: UNSELECT_RECIPE,
         payload: recipe
+    }
+}
+
+export function fetchSelections() {
+    const selections = localStorage.getItem('recipe-viewer-selections');
+    const selectedRecipes = new Set(JSON.parse(selections));
+    return {
+        type: FETCH_SELECTIONS,
+        payload: selectedRecipes 
     }
 }

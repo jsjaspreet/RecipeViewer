@@ -1,10 +1,10 @@
 import recipes from '../../recipes';
-import { FETCH_RECIPES } from './types';
-import { APPLY_FILTER } from './types';
-import { SELECT_RECIPE } from './types';
-import { UNSELECT_RECIPE } from './types';
-import { FETCH_SELECTIONS } from './types';
-import { Set } from 'immutable';
+import {FETCH_RECIPES} from './types';
+import {APPLY_FILTER} from './types';
+import {SELECT_RECIPE} from './types';
+import {UNSELECT_RECIPE} from './types';
+import {FETCH_SELECTIONS} from './types';
+import {Set} from 'immutable';
 
 
 export function fetchRecipes() {
@@ -39,6 +39,6 @@ export function fetchSelections() {
     const selectedRecipes = new Set(JSON.parse(selections));
     return {
         type: FETCH_SELECTIONS,
-        payload: selectedRecipes 
+        payload: selectedRecipes
     }
 }

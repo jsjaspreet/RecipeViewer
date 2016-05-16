@@ -10,18 +10,19 @@ class RecipeView extends Component {
             recipe: props.recipe
         };
         this.onChange = this.onChange.bind(this);
+
     }
 
-
-    componentWillReceiveProps(props) {
+    componentWillMount() {
         let selected = false;
-        props.selected_recipes.forEach((recipe) => {
+        this.props.selected_recipes.forEach((recipe) => {
             if(recipe.name == this.state.recipe.name) {
                 selected=true;
             }
         });
         this.setState({isChecked: selected});
     }
+
 
 
     onChange() {
